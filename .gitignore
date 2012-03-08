@@ -1,1 +1,3 @@
 *.swp
+Icon?
+.DS_Store
