@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="twelve columns">
 				<h1>Gwen & Woody</h1>
-				<p><em>September 22<sup>nd</sup>, 2012</em></p>
+				<p>September 22<sup>nd</sup>, 2012</p>
 			</div>
 		</div>
 	</div>
@@ -46,7 +46,7 @@
 
 	<div id="footer" class="container">
 		<div class="row">
-			<div class="twelve columns">
+			<div class="twelve columns text-center">
 				Copyright © 2012 Gwen &amp; Woody
 			</div>
 		</div>

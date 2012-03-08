@@ -1,22 +1,62 @@
-/* Artfully masterminded by ZURB  */
-
 /* -------------------------------------------------- 
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
-:: Page Name 1
-:: Page Name 2
+:: Home
 */
-
 
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
+html {
+	font-size: 80%;
+}
 
+sup, sub {
+	font-size: 0.75em;
+}
+sup {
+	vertical-align: top;
+	margin-top: -0.5em;
+}
+sub {
+	vertical-align: bottom;
+	margin-bottom: -0.5em;
+}
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: Quattrocento, Georiga, Times, serif;
+}
+
+img {
+	margin: 0.5em;
+	border: solid 0.8em #efefef;
+	border-radius: 0.2em;
+}
+
+.twelve {
+	text-align: center;
+}
+
+#header .row, #footer .row {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#header .row {
+	margin-bottom: 1em;
+	border-bottom: solid 1px #ddd;
+}
+#footer .row {
+	margin-top: 1em;
+	border-top: solid 1px #ddd;
+	color: #999;
+}
+#footer .row p {
+	font-size: 0.75em;
+}
 
 /* -----------------------------------------
-   Page Name 1
+   Home
 ----------------------------------------- */
 
 
