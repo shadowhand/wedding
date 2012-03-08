@@ -10,6 +10,10 @@ RewriteBase /
 	Deny From All
 </Files>
 
+# Redirect remove www. from domain
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule .* http://%1/$0 [R=301,L]
+
 # Protect application and system files from being viewed
 RewriteRule ^(?:application|modules|system)\b.* index.php/$0 [L]
 
