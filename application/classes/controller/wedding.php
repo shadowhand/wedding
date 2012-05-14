@@ -16,7 +16,6 @@ class Controller_Wedding extends Controller {
             $post = Arr::extract($this->request->post(), array(
                 'your_name',
                 'email_address',
-                'phone_number',
                 'total_guests',
                 'not_attending',
                 ));
@@ -25,8 +24,6 @@ class Controller_Wedding extends Controller {
                 ->rule('your_name', 'not_empty')
                 ->rule('email_address', 'not_empty')
                 ->rule('email_address', 'email')
-                ->rule('phone_number', 'not_empty')
-                ->rule('phone_number', 'phone')
                 ->rule('total_guests', 'digit')
                 ->rule('not_attending', 'in_array', array(':value', array('yes')))
                 ;
@@ -55,10 +52,9 @@ class Controller_Wedding extends Controller {
 
     protected function _message($post)
     {
-        $body = ($post['not_attending']
-                  ? ':your_name will not be attending. How sad.'
-                  : ':your_name will be attending, for a total of :total_guests guests.'
-              )."\nPhone number: :phone_number"
+        $body = $post['not_attending']
+              ? ':your_name will not be attending. How sad.'
+              : ':your_name will be attending, a total of :total_guests guests.'
               ;
 
         $values = array();
