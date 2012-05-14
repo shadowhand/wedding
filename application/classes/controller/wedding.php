@@ -38,7 +38,7 @@ class Controller_Wedding extends Controller {
                     ->from($post['email_address'], $post['your_name'])
                     ->bcc('woody.gilk@gmail.com', 'Woody Gilk')
                     ->subject('Wedding RSVP!')
-                    ->message($this->_message($post))
+                    ->message($this->_message($post->as_array()))
                     ;
 
                 $email->send();
