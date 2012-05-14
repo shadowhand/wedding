@@ -28,10 +28,31 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: Quattrocento, Georiga, Times, serif;
 }
 
-img {
+img.pad {
 	margin: 0.5em;
 	border: solid 0.8em #efefef;
 	border-radius: 0.2em;
+}
+
+form dl dt {
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+form dl dd.help {
+    margin-top: 0.2em;
+    color: #999;
+}
+form dl dd.submit {
+    margin-top: 1em;
+    text-align: right;
+}
+form dl input[type="text"],
+form dl input[type="tel"],
+form dl textarea,
+form dl select {
+    width: 100%;
+    _width: 98%;
+    box-sizing: border-box;
 }
 
 .twelve {
@@ -58,12 +79,17 @@ img {
 /* -----------------------------------------
    Home
 ----------------------------------------- */
-
-
-
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
-
+ul#lodging li.others {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    border-top: solid 1px #ddd;
+}
+form#rsvp label {
+    display: inline-block;
+}
+form#rsvp span.or {
+    display: inline-block;
+    padding: 0 0.3em;
+    color: #999;
+}
 

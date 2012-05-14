@@ -1,6 +1,44 @@
 <div class="row">
-	<div class="twelve columns">
-		<p><img src="/images/engagement photo.jpg" alt="Gwen and Woody's engagement photo"></p>
-		<p>Additional information about lodging, activities, and schedule coming soon!</p>
+	<div class="eight columns">
+        <h2>Where to stay?</h2>
+        <p class="lead">If you need a place to stay, here are some nearby places:</p>
+        <ul>
+            {{#lodgings}}
+            <li>
+                <h4><a href="{{website}}">{{name}}</a></h4>
+                <p>{{comment}}</p>
+                <div>
+                    <span class="address"><a href="http://maps.google.com/?{{&map}}">{{address}}</a></span> /
+                    <span class="telephone">{{telephone}}</span>
+                </div>
+            </li>
+            {{/lodgings}}
+        </ul>
 	</div>
+    <div class="four columns">
+        <h2>RVSP Here!</h2>
+        <form id="rsvp" action method="post">
+            <dl>
+                <dt>Your name?</h2>
+                <dd><input type="text" name="your_name" value="{{your_name}}" placeholder="John Doe" /></dd>
+
+                <dt>Your phone number?</dt>
+                <dd><input type="tel" name="phone_number" value="{{phone_number}}" placeholder="123-456-7890" /></dd>
+                <dd class="help">One of us will call you back to confirm your reservation and, if necessary, discuss lodging arrangements.</dd>
+
+                <dt>How many guests, including yourself?</dt>
+                <dd>
+                    <input type="number" name="total_guests" min="0" max="10" value="{{total_guests}}" />
+                    <span class="or">/</span>
+                    <label class="inline">
+                        <input type="checkbox" name="not_attending" value="yes" {{#not_attending}}checked {{/not_attending}} />
+                        Sorry, I can't make it!
+                    </label>
+                </dd>
+                <dd class="help">We need a maximum guest count, so include anyone that might be attending, even if they decide not to come.</dd>
+
+                <dd class="submit"><button class="small black nice button" type="submit">Send</button></dd>
+            </dl>
+        </form>
+    </div>
 </div>
