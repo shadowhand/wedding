@@ -16,10 +16,10 @@ class View_Wedding_Home extends View_Wedding {
             ),
             array(
                 'name' => 'Outpost Motel',
-                'comment' => 'Three minutes from town. Simple rooms and reasonable prices.',
-                'website' => 'http://bestwesternminnesota.com/hotels/best-western-plus-superior-inn-and-suites',
-                'address' => '104 1st Avenue E, Grand Marais, MN 55604',
-                'telephone' => '218-387-2240',
+                'comment' => 'Half way between Grand Marais and Hovland. Simple rooms, reasonable prices.',
+                'website' => 'http://www.outpostmotel.com/',
+                'address' => '2935 E Hwy 61, Grand Marais, MN 55604',
+                'telephone' => '218-387-1833',
             ),
             array(
                 'name' => 'Gunflint Motel & Cabins',
