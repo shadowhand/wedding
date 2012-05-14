@@ -42,6 +42,13 @@ class View_Wedding_Home extends View_Wedding {
                 'address' => '104 1st Avenue E, Grand Marais, MN 55604',
                 'telephone' => '218-387-2240',
             ),
+            array(
+                'name' => 'Grand Marais Campground',
+                'comment' => 'Want to use your RV or tent? This campground is right on the lake!',
+                'website' => 'http://grandmaraisrecreationarea.com/campground/index.htm',
+                'address' => '114 S 8th Av West, Grand Marais, MN 55604',
+                'telephone' => '218-387-1712',
+            ),
         );
 
     public function has_errors()
