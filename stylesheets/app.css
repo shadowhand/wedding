@@ -38,9 +38,13 @@ form dl dt {
     margin-top: 0.5em;
     font-weight: bold;
 }
-form dl dd.help {
+form dl dd.help,
+form dl dd.error {
     margin-top: 0.2em;
     color: #999;
+}
+form dl dd.error {
+    color: #911;
 }
 form dl dd.submit {
     margin-top: 1em;
@@ -48,6 +52,7 @@ form dl dd.submit {
 }
 form dl input[type="text"],
 form dl input[type="tel"],
+form dl input[type="email"],
 form dl textarea,
 form dl select {
     width: 100%;

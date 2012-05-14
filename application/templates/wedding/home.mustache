@@ -2,43 +2,74 @@
 	<div class="eight columns">
         <h2>Where to stay?</h2>
         <p class="lead">If you need a place to stay, here are some nearby places:</p>
-        <ul>
+        <ul id="lodging">
             {{#lodgings}}
             <li>
-                <h4><a href="{{website}}">{{name}}</a></h4>
+                <h4><a href="{{website}}" target="_blank">{{name}}</a></h4>
                 <p>{{comment}}</p>
                 <div>
-                    <span class="address"><a href="http://maps.google.com/?{{&map}}">{{address}}</a></span> /
+                    <span class="address"><a href="http://maps.google.com/?{{&map}}" target="_blank">{{address}}</a></span> /
                     <span class="telephone">{{telephone}}</span>
                 </div>
             </li>
             {{/lodgings}}
+            <li class="others"><em>There are <a href="http://maps.google.com/?q=lodging+near+55604" target="_blank">many other lodging options</a>, these are just our top picks.</em></li>
         </ul>
+
+        <p class="lead">If you are looking for other things to do, there are many activities near by, including: golf, kayaking, canoeing, hiking, sailboat tours, mountain biking, and swimming. Call one of us if you have questions about anything specific you would like to do.</p>
+       <p>Unfortunately, we cannot guarantee that you will see a moose.</p>
 	</div>
     <div class="four columns">
+        {{#sent}}
+        <h2>RSVP Sent!</h2>
+        <p>If you have any questions, please call Gwen at 218-370-9862 or Woody at 218-461-0465.</p>
+        {{/sent}}
+        {{^sent}}
         <h2>RVSP Here!</h2>
         <form id="rsvp" action method="post">
             <dl>
                 <dt>Your name?</h2>
-                <dd><input type="text" name="your_name" value="{{your_name}}" placeholder="John Doe" /></dd>
+                <dd><input type="text" name="your_name" value="{{post.your_name}}" placeholder="John Doe" /></dd>
+                {{#errors.your_name}}
+                <dd class="error">{{errors.your_name}}</dd>
+                {{/errors.your_name}}
 
-                <dt>Your phone number?</dt>
-                <dd><input type="tel" name="phone_number" value="{{phone_number}}" placeholder="123-456-7890" /></dd>
+                <dt>Email address?</dt>
+                <dd><input type="email" name="email_address" value="{{post.email_address}}" placeholder="you@example.com" /></dd>
+                {{#errors.email_address}}
+                <dd class="error">{{errors.email_address}}</dd>
+                {{/errors.email_address}}
+
+                <dt>Phone number?</dt>
+                <dd><input type="tel" name="phone_number" value="{{post.phone_number}}" placeholder="123-456-7890" /></dd>
+                {{#errors.phone_number}}
+                <dd class="error">{{errors.phone_number}}</dd>
+                {{/errors.phone_number}}
                 <dd class="help">One of us will call you back to confirm your reservation and, if necessary, discuss lodging arrangements.</dd>
 
                 <dt>How many guests, including yourself?</dt>
                 <dd>
-                    <input type="number" name="total_guests" min="0" max="10" value="{{total_guests}}" />
+                    <input type="number" name="total_guests" min="0" max="10" value="{{post.total_guests}}" placeholder="0" />
                     <span class="or">/</span>
                     <label class="inline">
-                        <input type="checkbox" name="not_attending" value="yes" {{#not_attending}}checked {{/not_attending}} />
+                        <input type="checkbox" name="not_attending" value="yes" {{#post.not_attending}}checked {{/post.not_attending}} />
                         Sorry, I can't make it!
                     </label>
                 </dd>
+                {{#errors.total_guests}}
+                <dd class="error">{{errors.total_guests}}</dd>
+                {{/errors.total_guests}}
+                {{#errors.not_attending}}
+                <dd class="error">{{errors.not_attending}}</dd>
+                {{/errors.not_attending}}
                 <dd class="help">We need a maximum guest count, so include anyone that might be attending, even if they decide not to come.</dd>
 
                 <dd class="submit"><button class="small black nice button" type="submit">Send</button></dd>
             </dl>
         </form>
+        {{/sent}}
+        <hr/>
+        <h3>See you soon!</h3>
+        <p class="text-center"><img src="/images/engagement photo.jpg" alt="Gwen and Woody's engagement photo" /></p>
     </div>
 </div>

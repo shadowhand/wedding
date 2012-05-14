@@ -98,13 +98,20 @@ Kohana::$config->attach(new Config_File);
  */
 Kohana::modules(array(
 	'kostache' => MODPATH.'kostache', // Mustache templates
+    'email'    => MODPATH.'email',    // Email objects
 	));
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('default', '(<page>)')
+Route::set('home', '')
+    ->defaults(array(
+        'controller' => 'wedding',
+        'action' => 'home',
+    ));
+
+Route::set('page', '<page>')
 	->defaults(array(
 		'controller' => 'wedding',
 		'action'     => 'page',
